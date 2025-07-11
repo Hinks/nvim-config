@@ -25,6 +25,11 @@ vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><
 -- format
 vim.keymap.set("n", "<leader>F", vim.lsp.buf.format, { desc = "Format with LSP" })
 
+-- Omni autocomplete meny Ctrl-o go next menu item
+vim.keymap.set("i", "<C-o>", function()
+  return vim.fn.pumvisible() == 1 and "<C-n>" or "<C-o>"
+end, { expr = true, silent = true })
+
 vim.api.nvim_create_autocmd("FileType", {
     pattern = "elm",
     callback = function()
