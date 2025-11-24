@@ -2,4 +2,4 @@ require("hinks.set")
 require("hinks.remap")
 require("hinks.lazy_init")
 
-vim.cmd.colorscheme("tokyonight-night")
+vim.cmd.colorscheme("tokyonight-storm")

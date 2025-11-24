@@ -2,7 +2,8 @@ return {
     {
         "neovim/nvim-lspconfig",
         config = function()
-            require("lspconfig").elmls.setup {}
+            vim.lsp.enable('elmls')
+            --require("lspconfig").elmls.setup {}
         end,
     }
 }

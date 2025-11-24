@@ -33,7 +33,7 @@ end, { expr = true, silent = true })
 vim.api.nvim_create_autocmd("FileType", {
     pattern = "elm",
     callback = function()
-        vim.opt_local.colorcolumn = "80"
+        --vim.opt_local.colorcolumn = "80"
 
         -- Override visual-mode J/K only for Elm
         --Fixes the unwanted injection in elm files
@@ -42,3 +42,10 @@ vim.api.nvim_create_autocmd("FileType", {
     end,
 })
 
+-- auto-reload files when modified externally
+-- https://unix.stackexchange.com/a/383044
+vim.o.autoread = true
+vim.api.nvim_create_autocmd({ "BufEnter", "CursorHold", "CursorHoldI", "FocusGained" }, {
+  command = "if mode() != 'c' | checktime | endif",
+  pattern = { "*" },
+})
