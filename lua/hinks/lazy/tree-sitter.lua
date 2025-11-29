@@ -10,7 +10,8 @@ return {
                 "lua",
                 "markdown",
                 "javascript",
-                "elm"
+                "elm",
+                "typescript"
             }
 
             vim.defer_fn(function() require("nvim-treesitter").install(parser_installed) end, 1000)
