@@ -49,3 +49,8 @@ vim.api.nvim_create_autocmd({ "BufEnter", "CursorHold", "CursorHoldI", "FocusGai
   command = "if mode() != 'c' | checktime | endif",
   pattern = { "*" },
 })
+
+-- Use CTRL-space to trigger LSP completion.
+-- Use CTRL-Y to select an item. |complete_CTRL-Y|
+vim.keymap.set('i', '<C-Space>', '<C-x><C-o>', { desc = 'Trigger LSP completion' })
+

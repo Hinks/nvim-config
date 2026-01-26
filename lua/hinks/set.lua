@@ -18,6 +18,12 @@ vim.opt.undofile = true
 vim.opt.hlsearch = false
 vim.opt.incsearch = true
 
+-- Case-insensitive command-line Tab completion (e.g. :nvimt<Tab> matches NvimTreeToggle).
+-- wildignorecase = file/dir completion only; ignorecase = command names and other completions.
+vim.opt.ignorecase = true
+vim.opt.smartcase = true   -- override: search case-sensitive when pattern has uppercase
+vim.opt.wildignorecase = true
+
 vim.opt.termguicolors = true
 
 vim.opt.scrolloff = 8
