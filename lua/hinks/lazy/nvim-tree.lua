@@ -29,8 +29,6 @@ return {
     end
 
     require("nvim-tree").setup {
-      open_on_setup = false,
-      open_on_setup_file = false,
       on_attach = function(bufnr)
         local function opts(desc)
           return { desc = "nvim-tree: " .. desc, buffer = bufnr, noremap = true, silent = true, nowait = true }
