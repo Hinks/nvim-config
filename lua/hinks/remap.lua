@@ -54,3 +54,5 @@ vim.api.nvim_create_autocmd({ "BufEnter", "CursorHold", "CursorHoldI", "FocusGai
 -- Use CTRL-Y to select an item. |complete_CTRL-Y|
 vim.keymap.set('i', '<C-Space>', '<C-x><C-o>', { desc = 'Trigger LSP completion' })
 
+-- Alternatively, save with <Leader>fs (File Save)
+vim.keymap.set('n', '<Leader>fs', ':update<CR>', { desc = 'Save File' })
