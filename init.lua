@@ -345,6 +345,16 @@ vim.keymap.set("n", "<leader>lr", "<cmd>LspRestart<CR>", { desc = "Restart LSP" 
 -- Completion {{{
 require("blink.cmp").setup({
   keymap = { preset = "default" },
+  cmdline = {
+    keymap = { preset = "inherit" },
+    completion = {
+      menu = {
+        auto_show = function()
+          return vim.fn.getcmdtype() == ":"
+        end,
+      },
+    },
+  },
   signature = { enabled = true },
   appearance = {
     nerd_font_variant = "mono",
