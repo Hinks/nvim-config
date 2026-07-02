@@ -257,6 +257,7 @@ vim.keymap.set("n", "<leader>ff", telescope_builtin.find_files, { desc = "Telesc
 vim.keymap.set("n", "<leader>fg", telescope_builtin.live_grep, { desc = "Telescope live grep" })
 vim.keymap.set("n", "<leader>fb", telescope_builtin.buffers, { desc = "Telescope buffers" })
 vim.keymap.set("n", "<leader>fh", telescope_builtin.help_tags, { desc = "Telescope help tags" })
+vim.keymap.set("n", "<leader>ts", "<cmd>Telescope<CR>", { desc = "Telescope command" })
 
 vim.keymap.set("n", "<leader>en", function()
   telescope_builtin.find_files({
@@ -339,7 +340,7 @@ vim.keymap.set("n", "gK", function()
   vim.diagnostic.config({ virtual_lines = new_config })
 end, { desc = "Toggle diagnostic virtual_lines" })
 
-vim.keymap.set("n", "<leader>lr", "<cmd>LspRestart<CR>", { desc = "Restart LSP" })
+vim.keymap.set("n", "<leader>lr", "<cmd>lsp restart<CR>", { desc = "Restart LSP" })
 -- }}}
 
 -- Completion {{{
