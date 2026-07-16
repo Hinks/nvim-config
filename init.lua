@@ -332,12 +332,16 @@ vim.lsp.enable("elmls")
 vim.lsp.enable("ts_ls")
 
 -- Show diagnostics inline as virtual lines by default.
-vim.diagnostic.config({ virtual_lines = true })
+vim.diagnostic.config({ virtual_lines = { current_line = true } })
 
 -- Toggle inline diagnostics without reopening Neovim.
-vim.keymap.set("n", "gK", function()
-  local new_config = not vim.diagnostic.config().virtual_lines
-  vim.diagnostic.config({ virtual_lines = new_config })
+vim.keymap.set("n", "<leader>td", function()
+  local virtual_lines = vim.diagnostic.config().virtual_lines
+  if virtual_lines then
+    vim.diagnostic.config({ virtual_lines = false })
+  else
+    vim.diagnostic.config({ virtual_lines = { current_line = true } })
+  end
 end, { desc = "Toggle diagnostic virtual_lines" })
 
 vim.keymap.set("n", "<leader>lr", "<cmd>lsp restart<CR>", { desc = "Restart LSP" })
